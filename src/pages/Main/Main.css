@@ -1,0 +1,328 @@
+/* Global Styles */
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url("fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url("fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url("fonts/Montserrat-Light.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* .homePage Container */
+.homePage {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* header and .iconMotion */
+header {
+    width: 100%;
+    height: 7%;
+    display: flex;
+}
+
+.iconMotion {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 100%;
+    width: 5rem;
+    background-image: url("/img/Imagologo_motion.svg");
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+
+/* .welcomeMI Section */
+.welcomeMI {
+    font-family: Montserrat-Bold;
+    width: 100%;
+    height: 77%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    z-index: 1;
+    margin-bottom: 5.5%;
+    font-size: 6.2rem;
+    color: #00249C;
+    animation: moveLeft 2s ease-in-out forwards;
+}
+
+.mainImg {
+    position: absolute;
+    background-image: url("/img/Telefono-01.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 60%;
+    z-index: 2;
+    animation: moveUp 2s ease-in-out forwards;
+}
+
+.subTitle {
+    position: absolute;
+    z-index: 3;
+    margin-top: 4.3%;
+    color: #00249C;
+    font-size: 4rem;
+    margin-left: 1px;
+    animation: moveDown 2s ease-in-out forwards;
+}
+
+/* .redirectLinks Section */
+.redirectLinks {
+    width: 100%;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+}
+
+.redirectLinks>a {
+    color: #00BFFF;
+    font-family: Montserrat-Medium;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+/* .animation Container */
+.animation {
+    position: absolute;
+    width: 30rem;
+    height: 65rem;
+    top: -10%;
+    right: -1000px;
+    animation: moveCircle 7s linear infinite;
+    overflow: hidden;
+}
+
+.circleAnimation {
+    margin-left: 90px;
+    width: 35rem;
+    height: 65rem;
+    border-radius: 50%;
+    box-shadow: 0 0 55px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Keyframes */
+@keyframes moveCircle {
+    0% {
+        right: -1000px;
+    }
+
+    100% {
+        right: 100vw;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-800%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(-500%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(150%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* .formUsers Container */
+.formUsers {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* .userFeatures Section */
+.userFeatures {
+    width: 100%;
+    height: 85%;
+    display: grid;
+    grid-template-columns: 42% 53%;
+}
+
+/* .createUpdateUser and .card */
+.createUpdateUser {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    padding: 2%;
+    border: none;
+    width: 65%;
+    height: 35%;
+    max-height: 60%;
+    margin-top: 50px;
+    border-radius: 15px;
+    display: grid;
+    box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+}
+
+/* .plus Icon */
+.plus {
+    background-image: url("/img/Icon_crear.svg");
+    background-repeat: no-repeat;
+    width: 2rem;
+    background-size: 70%;
+    height: 2rem;
+    position: absolute;
+    margin-right: 360px;
+    margin-bottom: 30px;
+}
+
+/* .marca Section */
+.marca {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconMarca {
+    width: 10%;
+    height: 3rem;
+    background-image: url("/img/Icon_vehiculo.svg");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.marca>input {
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    height: 55%;
+    width: 75%;
+    border-radius: 15px;
+    padding: 5%;
+    border: 2px solid #C5C5C5;
+}
+
+.marca>input::placeholder {
+    color: #C5C5C5;
+}
+
+/* .sucursal Section */
+.sucursal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconSucursal {
+    width: 10%;
+    height: 3rem;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/img/Icon_puntoubicacion.svg");
+}
+
+.sucursal>input {
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    height: 55%;
+    width: 75%;
+    border-radius: 15px;
+    padding: 5%;
+    border: 2px solid #C5C5C5;
+}
+
+.sucursal>input::placeholder {
+    color: #C5C5C5;
+}
+
+/* .user Section */
+.user {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconUser {
+    width: 10%;
+    height: 3rem;
+    background-image: url("/img/Icon_persona.svg");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.user>input {
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    height: 55%;
+    width: 75%;
+    border-radius: 15px;
+    padding: 5%;
+    border: 2px solid #C5C5C5;
+}
+
+.user>input::placeholder {
+    color: #C5C5C5;
+}
+
+/* .tableUsers Section */
+.tableUsers {
+    border: 1px solid;
+}
+
+/* .iconMotionv2 Icon */
+.iconMotionv2 {
+    width: 18rem;
+    height: 6rem;
+    background-image: url("/img/Imagologotipo_motion.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
