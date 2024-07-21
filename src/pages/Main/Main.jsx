@@ -1,12 +1,69 @@
+import React, { useEffect, useState } from 'react';
 import './Main.css';
+import { fetchUsers, updateUser } from '../../services/userService';
 
 const Main = () => {
+  const [users, setUsers] = useState([]);
+  const [showButtons, setShowButtons] = useState(false);
+  const [marca, setMarca] = useState('');
+  const [sucursal, setSucursal] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [selectedUserId, setSelectedUserId] = useState(null);
 
-  const users = [
-    { nombre: 'Juan Perez', edad: 30, email: 'juan@example.com' },
-    { nombre: 'Ana Gomez', edad: 25, email: 'ana@example.com' },
-    { nombre: 'Carlos Ruiz', edad: 28, email: 'carlos@example.com' },
-  ];
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const usersData = await fetchUsers();
+        setUsers(usersData);
+      } catch (error) {
+        console.error('Error al cargar usuarios:', error);
+      }
+    };
+
+    loadUsers();
+  }, []);
+
+  const handlePlusClick = () => {
+    setShowButtons(true);
+  };
+
+  const handleCancelClick = () => {
+    setMarca('');
+    setSucursal('');
+    setFullName('');
+    setShowButtons(false);
+  };
+
+  const handleAcceptClick = async () => {
+    try {
+      await updateUser({
+        id: selectedUserId,
+        marca,
+        sucursal,
+        fullName
+      });
+
+      const updatedUsers = await fetchUsers();
+      setUsers(updatedUsers);
+      setMarca('');
+      setSucursal('');
+      setFullName('');
+      setShowButtons(false);
+
+      window.location.reload();
+    } catch (error) {
+      console.error('Error al aceptar la actualización:', error);
+    }
+  };
+
+
+  const handleUpdateClick = (user) => {
+    setMarca(user.marca);
+    setSucursal(user.sucursal);
+    setFullName(user.aspirante);
+    setSelectedUserId(user.id);
+    setShowButtons(true);
+  };
 
   return (
     <>
@@ -33,20 +90,41 @@ const Main = () => {
       <div className="formUsers">
         <div className="userFeatures">
           <div className="createUpdateUser">
-            <div className="card">
+            <div className={showButtons ? 'show-buttons' : 'card'}>
               <div className="marca">
                 <div className="plus"></div>
                 <div className="iconMarca"></div>
-                <input type="text" placeholder="Mazda" />
+                <input
+                  type="text"
+                  placeholder="Mazda"
+                  value={marca}
+                  onChange={(e) => setMarca(e.target.value)}
+                />
               </div>
               <div className="sucursal">
                 <div className="iconSucursal"></div>
-                <input type="text" placeholder="Chapinero" />
+                <input
+                  type="text"
+                  placeholder="Chapinero"
+                  value={sucursal}
+                  onChange={(e) => setSucursal(e.target.value)}
+                />
               </div>
               <div className="user">
                 <div className="iconUser"></div>
-                <input type="text" placeholder="David Sandoval" />
+                <input
+                  type="text"
+                  placeholder="David Sandoval"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
               </div>
+              {showButtons && (
+                <div className="action-buttons">
+                  <button className="btn-cancel" onClick={handleCancelClick}></button>
+                  <button className="btn-accept" onClick={handleAcceptClick}></button>
+                </div>
+              )}
             </div>
           </div>
           <div className="tableUsers">
@@ -59,13 +137,22 @@ const Main = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* {users.map((user, index) => (
+                {users.map((user, index) => (
                   <tr key={index}>
-                    <td>{user.nombre}</td>
-                    <td>{user.edad}</td>
-                    <td>{user.email}</td>
+                    <td>{user.marca}</td>
+                    <td>{user.sucursal}</td>
+                    <td>
+                      <div className="aspirante-content">
+                        <span className="aspirante-name">{user.aspirante}</span>
+                        <div
+                          className="btnUpdate"
+                          onClick={() => handleUpdateClick(user)}
+                        ></div>
+                        <div className="btnDelete"></div>
+                      </div>
+                    </td>
                   </tr>
-                ))} */}
+                ))}
               </tbody>
             </table>
           </div>
