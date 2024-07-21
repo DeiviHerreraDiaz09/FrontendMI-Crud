@@ -1,6 +1,13 @@
 import './Main.css';
 
 const Main = () => {
+
+  const users = [
+    { nombre: 'Juan Perez', edad: 30, email: 'juan@example.com' },
+    { nombre: 'Ana Gomez', edad: 25, email: 'ana@example.com' },
+    { nombre: 'Carlos Ruiz', edad: 28, email: 'carlos@example.com' },
+  ];
+
   return (
     <>
       <div className="homePage">
@@ -42,7 +49,26 @@ const Main = () => {
               </div>
             </div>
           </div>
-          <div className="tableUsers"></div>
+          <div className="tableUsers">
+            <table>
+              <thead>
+                <tr>
+                  <th>Marca</th>
+                  <th>Sucursal</th>
+                  <th>Aspirante</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* {users.map((user, index) => (
+                  <tr key={index}>
+                    <td>{user.nombre}</td>
+                    <td>{user.edad}</td>
+                    <td>{user.email}</td>
+                  </tr>
+                ))} */}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="iconMotionv2"></div>
       </div>

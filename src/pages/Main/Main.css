@@ -317,7 +317,42 @@ header {
     border: 1px solid;
 }
 
-/* .iconMotionv2 Icon */
+.tableUsers {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    border: none;
+  }
+  
+  th {
+    background-color: #E280BE;
+    height: 3rem;
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  th:first-child {
+    border-left: none; 
+  }
+  
+  th:last-child {
+    border-right: none;
+  }
+
+  
 .iconMotionv2 {
     width: 18rem;
     height: 6rem;
