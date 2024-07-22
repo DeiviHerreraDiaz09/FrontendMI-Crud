@@ -1,6 +1,6 @@
 import React from 'react'
 import './RedirectLinks.css';
-
+import "../../index.css"
 
 const RedirectLinks = () => {
   return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import style2 from './WelcomeSection.module.css';
+import "../../index.css"
 
 const WelcomeSection = () => {
   return (

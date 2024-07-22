@@ -2,6 +2,7 @@ import styles from './Main.module.css';
 import WelcomeSection from '../../components/WelcomeSection/WelcomeSection';
 import UserForm from '../../components/UserForm/UserForm';
 import { RedirectLinks } from '../../components/RedirectLinks';
+import "../../index.css"
 import { UserTable } from '../../components/UserTable';
 import UseUserManagement from '../../hooks/useUserManagement';
 

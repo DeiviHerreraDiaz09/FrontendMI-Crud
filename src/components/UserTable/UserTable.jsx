@@ -1,5 +1,6 @@
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './UserTable.css';
+import "../../index.css"
 
 const UserTable = ({ users, selectedUserId, handleUpdateClick, handleDeleteClick }) => {
 

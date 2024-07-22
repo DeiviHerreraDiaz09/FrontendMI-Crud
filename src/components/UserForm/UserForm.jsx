@@ -1,5 +1,6 @@
 import React from 'react';
 import './UserForm.css';
+import "../../index.css"
 
 const UserForm = ({
   iconMarcaClass,

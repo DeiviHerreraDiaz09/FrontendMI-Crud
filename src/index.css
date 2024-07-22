@@ -13,14 +13,14 @@
     src: url("fonts/Montserrat-Light.ttf");
 }
 
-/* styles.css o tu archivo CSS correspondiente */
+
 .custom-swal .swal2-icon.swal2-success .swal2-success-circular-line-left,
 .custom-swal .swal2-icon.swal2-success .swal2-success-circular-line-right {
-  stroke: #C6007E; /* Color morado */
+  stroke: #C6007E; 
 }
 
 .custom-swal .swal2-icon.swal2-success .swal2-success-fix {
-  background-color: #C6007E; /* Color morado */
+  background-color: #C6007E; 
 }
 
 .custom-swal {
