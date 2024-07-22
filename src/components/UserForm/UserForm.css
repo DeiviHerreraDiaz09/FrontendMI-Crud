@@ -295,3 +295,33 @@
     }
 }
 
+@media screen and (min-width: 1872px) {
+
+    .plus {
+        background-position: center;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .iconMarca {
+        margin-top: 10px;
+        margin-right: 12px;
+    }
+
+    .iconMarcaActive {
+        margin-top: 10px;
+        margin-right: 12px;
+    }
+
+    .marca>input {
+        font-family: Montserrat-Medium;
+        font-size: 18px;
+        height: 55%;
+        width: 75%;
+        border-radius: 15px;
+        padding: 5%;
+        border: 2px solid #C5C5C5;
+        color: #C5C5C5;
+    }
+
+}
