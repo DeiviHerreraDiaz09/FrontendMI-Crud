@@ -36,9 +36,10 @@ const UseUserManagement = () => {
     setSucursal('');
     setFullName('');
     setInputsEnabledState(true);
-    setIconMarcaClass(iconMarcaClass === 'iconMarca' ? 'iconMarcaActive' : 'iconMarca');
-    setIconSucursalClass(iconSucursalClass === 'iconSucursal' ? 'iconSucursalActive' : 'iconSucursal');
-    setIconUserClass(iconUserClass === 'iconUser' ? 'iconUserActive' : 'iconUser');
+    setIconMarcaClass('iconMarcaActive');
+    setIconSucursalClass('iconSucursalActive');
+    setIconUserClass('iconUserActive');
+
   };
 
   const handleCancelClick = () => {
