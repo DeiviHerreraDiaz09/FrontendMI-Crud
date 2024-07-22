@@ -1,12 +1,12 @@
 import React from 'react'
-import './WelcomeSection.css';
+import style2 from './WelcomeSection.module.css';
 
 const WelcomeSection = () => {
   return (
-    <div className="welcomeMI">
-      <h1 className="title">BIENVENIDO A</h1>
-      <div className="mainImg"></div>
-      <h2 className="subTitle">MONITORING INNOVATION</h2>
+    <div className={style2.welcomeMI}>
+      <h1 className={style2.title}>BIENVENIDO A</h1>
+      <div className={style2.mainImg}></div>
+      <h2 className={style2.subTitle}>MONITORING INNOVATION</h2>
     </div>
   )
 }

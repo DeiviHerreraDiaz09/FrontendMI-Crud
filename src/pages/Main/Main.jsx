@@ -1,26 +1,24 @@
-import React from 'react';
-import './Main.css';
+import styles from './Main.module.css'; 
 import WelcomeSection from '../../components/WelcomeSection/WelcomeSection';
-import { RedirectLinks } from '../../components/RedirectLinks';
 import UserForm from '../../components/UserForm/UserForm';
+import { RedirectLinks } from '../../components/RedirectLinks';
 import { UserTable } from '../../components/UserTable';
 import UseUserManagement from '../../hooks/useUserManagement';
 
 const Main = () => {
   const {
     iconMarcaClass,
-    setSelectedUserId,
     selectedUserId,
     iconSucursalClass,
     iconUserClass,
+    showOptions,
     users,
     showButtons,
     marca,
     sucursal,
     fullName,
-    showOptions,
     inputsEnabledState,
-    setInputsEnabledState,
+    errors,
     handleCreateClick,
     handlePlusClick,
     handleCancelClick,
@@ -28,51 +26,51 @@ const Main = () => {
     handleUpdateClick,
     handleDeleteClick,
     setMarca,
+    setInputsEnabledState,
     setSucursal,
     setFullName,
-    errors,
     setErrors,
   } = UseUserManagement();
 
   return (
     <>
-      <div className="homePage">
+      <div className={styles.homePage}> 
         <header>
-          <div className="iconMotion"></div>
+          <div className={styles.iconMotion}></div>
         </header>
         <WelcomeSection />
         <RedirectLinks />
-        <div className="animation">
-          <div className="circleAnimation"></div>
+        <div className={styles.animation}>
+          <div className={styles.circleAnimation}></div>
         </div>
       </div>
 
-      <div className="formUsers">
-        <div className="userFeatures">
+      <div className={styles.formUsers}>
+        <div className={styles.userFeatures}>
           <UserForm
-            handlePlusClick={handlePlusClick}
+            iconMarcaClass={iconMarcaClass}
+            iconSucursalClass={iconSucursalClass}
+            iconUserClass={iconUserClass}
             showOptions={showOptions}
             showButtons={showButtons}
             marca={marca}
-            setMarca={setMarca}
             sucursal={sucursal}
-            setSucursal={setSucursal}
             fullName={fullName}
+            inputsEnabledState={inputsEnabledState}
+            errors={errors}
+            handlePlusClick={handlePlusClick}
+            setMarca={setMarca}
+            setSucursal={setSucursal}
             setFullName={setFullName}
             handleCancelClick={handleCancelClick}
             handleAcceptClick={handleAcceptClick}
             handleCreateClick={handleCreateClick}
-            inputsEnabledState={inputsEnabledState}
             setInputsEnabledState={setInputsEnabledState}
-            errors={errors}
             setErrors={setErrors}
-            iconMarcaClass={iconMarcaClass}
-            iconSucursalClass={iconSucursalClass}
-            iconUserClass={iconUserClass}
           />
-          <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick} selectedUserId={selectedUserId}/>
+          <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick} selectedUserId={selectedUserId} />
         </div>
-        <div className="iconMotionv2"></div>
+        <div className={styles.iconMotionv2}></div>
       </div>
     </>
   );
