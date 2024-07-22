@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './UserTable.css';
 
 const UserTable = ({ users, handleUpdateClick, handleDeleteClick }) => {
@@ -12,25 +13,29 @@ const UserTable = ({ users, handleUpdateClick, handleDeleteClick }) => {
             <th>Aspirante</th>
           </tr>
         </thead>
-        <tbody>
+        <TransitionGroup component="tbody">
           {users.map((user, index) => (
-            <tr key={index}>
-              <td>{user.marca}</td>
-              <td>{user.sucursal}</td>
-              <td>
-                <div className="aspirante-content">
-                  <span className="aspirante-name">{user.aspirante}</span>
-                  <div
-                    className="btnUpdate"
-                    onClick={() => handleUpdateClick(user)}
-                  ></div>
-                  <div className="btnDelete"
-                  onClick={() => handleDeleteClick(user.id)}></div>
-                </div>
-              </td>
-            </tr>
+            <CSSTransition key={user.id} timeout={500} classNames="fade">
+              <tr className="fade-row">
+                <td>{user.marca}</td>
+                <td>{user.sucursal}</td>
+                <td>
+                  <div className="aspirante-content">
+                    <span className="aspirante-name">{user.aspirante}</span>
+                    <div
+                      className="btnUpdate"
+                      onClick={() => handleUpdateClick(user)}
+                    ></div>
+                    <div
+                      className="btnDelete"
+                      onClick={() => handleDeleteClick(user.id)}
+                    ></div>
+                  </div>
+                </td>
+              </tr>
+            </CSSTransition>
           ))}
-        </tbody>
+        </TransitionGroup>
       </table>
     </div>
   );

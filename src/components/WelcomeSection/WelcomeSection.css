@@ -37,6 +37,11 @@
     font-size: 4rem;
     margin-left: 1px;
     animation: moveDown 2s ease-in-out forwards;
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
 }
 
 @keyframes moveDown {

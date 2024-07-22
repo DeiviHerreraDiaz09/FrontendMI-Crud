@@ -8,6 +8,9 @@ import UseUserManagement from '../../hooks/useUserManagement';
 
 const Main = () => {
   const {
+    iconMarcaClass,
+    iconSucursalClass,
+    iconUserClass,
     users,
     showButtons,
     marca,
@@ -26,7 +29,10 @@ const Main = () => {
     setSucursal,
     setFullName,
     errors,
-    setErrors
+    setErrors,
+    setIconMarcaClass,
+    setIconSucursalClass,
+    setIconUserClass
   } = UseUserManagement();
 
   return (
@@ -61,6 +67,9 @@ const Main = () => {
             setInputsEnabledState={setInputsEnabledState}
             errors={errors}
             setErrors={setErrors}
+            iconMarcaClass={iconMarcaClass}
+            iconSucursalClass={iconSucursalClass}
+            iconUserClass={iconUserClass}
           />
           <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick} />
         </div>

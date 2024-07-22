@@ -2,6 +2,9 @@ import React from 'react';
 import './UserForm.css';
 
 const UserForm = ({
+  iconMarcaClass,
+  iconSucursalClass,
+  iconUserClass,
   showButtons,
   setInputsEnabledState,
   handlePlusClick,
@@ -17,7 +20,10 @@ const UserForm = ({
   handleAcceptClick,
   handleCreateClick,
   errors,
-  setErrors
+  setErrors,
+  setIconMarcaClass,
+  setIconSucursalClass,
+  setIconUserClass
 }) => {
 
   const handleCreate = () => {
@@ -43,6 +49,9 @@ const UserForm = ({
       const newUser = { marca, sucursal, fullName };
       handleCreateClick(newUser);
       setInputsEnabledState(false);
+      setIconMarcaClass('iconMarca')
+      setIconSucursalClass('iconSucursal')
+      setIconUserClass('iconUser')
     }
   };
 
@@ -50,8 +59,10 @@ const UserForm = ({
     <div className="createUpdateUser">
       <div className={showButtons ? 'show-buttons' : showOptions ? "show-options" : "card"}>
         <div className="marca">
-          <div className="plus" onClick={handlePlusClick}></div>
-          <div className="iconMarca"></div>
+          <div className="marca-icons">
+            <div className="plus" onClick={handlePlusClick}></div>
+            <div className={iconMarcaClass}></div>
+          </div>
           <input
             type="text"
             placeholder="Mazda"
@@ -62,10 +73,10 @@ const UserForm = ({
             }}
             disabled={!inputsEnabledState}
           />
-          {errors.marca && <div className="error">{errors.marca}</div>}
+          {errors.marca && <div className="errorOne">{errors.marca}</div>}
         </div>
         <div className="sucursal">
-          <div className="iconSucursal"></div>
+          <div className={iconSucursalClass}></div>
           <input
             type="text"
             placeholder="Chapinero"
@@ -79,7 +90,7 @@ const UserForm = ({
           {errors.sucursal && <div className="error">{errors.sucursal}</div>}
         </div>
         <div className="user">
-          <div className="iconUser"></div>
+          <div className={iconUserClass}></div>
           <input
             type="text"
             placeholder="David Sandoval"

@@ -80,3 +80,29 @@ td {
     background-image: url("/img/Icon_eliminar1.svg");
     cursor: pointer;
 }
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+    border-bottom-color: transparent;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    border-bottom-color: #E280BE;
+    transition: opacity 500ms, transform 500ms, border-bottom-color 500ms;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+    border-bottom-color: #E280BE;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    border-bottom-color: transparent;
+    transition: opacity 500ms, transform 500ms, border-bottom-color 500ms;
+}

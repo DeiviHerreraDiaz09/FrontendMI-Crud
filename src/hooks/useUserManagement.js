@@ -11,6 +11,10 @@ const UseUserManagement = () => {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [inputsEnabledState, setInputsEnabledState] = useState(false);
   const [errors, setErrors] = useState({ marca: '', sucursal: '', fullName: '' });
+  const [iconMarcaClass, setIconMarcaClass] = useState('iconMarca');
+  const [iconSucursalClass, setIconSucursalClass] = useState('iconSucursal');
+  const [iconUserClass, setIconUserClass] = useState('iconUser');
+
 
   useEffect(() => {
     const loadUsers = async () => {
@@ -29,6 +33,9 @@ const UseUserManagement = () => {
     setShowOptions(true);
     setShowButtons(false);
     setInputsEnabledState(true);
+    setIconMarcaClass(iconMarcaClass === 'iconMarca' ? 'iconMarcaActive' : 'iconMarca');
+    setIconSucursalClass(iconSucursalClass === 'iconSucursal' ? 'iconSucursalActive' : 'iconSucursal');
+    setIconUserClass(iconUserClass === 'iconUser' ? 'iconUserActive' : 'iconUser');
   };
 
   const handleCancelClick = () => {
@@ -39,6 +46,9 @@ const UseUserManagement = () => {
     setShowOptions(false);
     setInputsEnabledState(false);
     setErrors({ marca: '', sucursal: '', fullName: '' });
+    setIconMarcaClass('iconMarca')
+    setIconSucursalClass('iconSucursal')
+    setIconUserClass('iconUser')
   };
 
   const handleAcceptClick = async () => {
@@ -128,6 +138,9 @@ const UseUserManagement = () => {
   }
 
   return {
+    iconMarcaClass,
+    iconSucursalClass,
+    iconUserClass,
     users,
     showButtons,
     marca,
@@ -146,7 +159,10 @@ const UseUserManagement = () => {
     setMarca,
     setSucursal,
     setFullName,
-    setErrors
+    setErrors,
+    setIconMarcaClass,
+    setIconSucursalClass,
+    setIconUserClass
   };
 };
 
