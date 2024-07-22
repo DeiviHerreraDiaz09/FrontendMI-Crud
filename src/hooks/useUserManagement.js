@@ -16,6 +16,7 @@ const UseUserManagement = () => {
   const [iconUserClass, setIconUserClass] = useState('iconUser');
 
 
+
   useEffect(() => {
     const loadUsers = async () => {
       try {
@@ -45,6 +46,7 @@ const UseUserManagement = () => {
     setShowButtons(false);
     setShowOptions(false);
     setInputsEnabledState(false);
+    setSelectedUserId(null);
     setErrors({ marca: '', sucursal: '', fullName: '' });
     setIconMarcaClass('iconMarca')
     setIconSucursalClass('iconSucursal')
@@ -90,6 +92,9 @@ const UseUserManagement = () => {
       setShowButtons(false);
       setInputsEnabledState(false);
       setErrors({ marca: '', sucursal: '', fullName: '' });
+      setIconMarcaClass('iconMarca')
+      setIconSucursalClass('iconSucursal')
+      setIconUserClass('iconUser')
     } catch (error) {
       console.error('Error al aceptar la actualización:', error);
     }
@@ -112,6 +117,9 @@ const UseUserManagement = () => {
       setShowOptions(false);
       setInputsEnabledState(false);
       setErrors({ marca: '', sucursal: '', fullName: '' });
+      setIconMarcaClass('iconMarca')
+      setIconSucursalClass('iconSucursal')
+      setIconUserClass('iconUser')
     } catch (error) {
       console.error('Error al crear el usuario:', error);
     }
@@ -125,6 +133,9 @@ const UseUserManagement = () => {
     setShowButtons(true);
     setShowOptions(false);
     setInputsEnabledState(true);
+    setIconMarcaClass('iconMarcaActive');
+    setIconSucursalClass('iconSucursalActive');
+    setIconUserClass('iconUserActive');
   };
 
   const handleDeleteClick = async (id) => {
@@ -146,6 +157,7 @@ const UseUserManagement = () => {
     marca,
     sucursal,
     fullName,
+    selectedUserId,
     showOptions,
     inputsEnabledState,
     errors,

@@ -20,10 +20,7 @@ const UserForm = ({
   handleAcceptClick,
   handleCreateClick,
   errors,
-  setErrors,
-  setIconMarcaClass,
-  setIconSucursalClass,
-  setIconUserClass
+  setErrors
 }) => {
 
   const handleCreate = () => {
@@ -49,9 +46,6 @@ const UserForm = ({
       const newUser = { marca, sucursal, fullName };
       handleCreateClick(newUser);
       setInputsEnabledState(false);
-      setIconMarcaClass('iconMarca')
-      setIconSucursalClass('iconSucursal')
-      setIconUserClass('iconUser')
     }
   };
 

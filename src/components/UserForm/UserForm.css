@@ -85,7 +85,7 @@
     margin-right: 5px;
 }
 
-.iconMarcaActive{
+.iconMarcaActive {
     width: 2rem;
     height: 2rem;
     background-image: url("/img/Icon_vehiculo1.svg");
@@ -132,7 +132,7 @@
     background-image: url("/img/Icon_puntoubicacion.svg");
 }
 
-.iconSucursalActive{
+.iconSucursalActive {
     width: 10%;
     height: 3rem;
     background-size: 80%;
@@ -175,13 +175,13 @@
     background-position: center;
 }
 
-.iconUserActive{
+.iconUserActive {
     width: 10%;
     height: 3rem;
     background-image: url("/img/Icon_persona1.svg");
     background-size: 70%;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
 .user>input {

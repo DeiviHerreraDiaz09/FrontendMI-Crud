@@ -9,6 +9,8 @@ import UseUserManagement from '../../hooks/useUserManagement';
 const Main = () => {
   const {
     iconMarcaClass,
+    setSelectedUserId,
+    selectedUserId,
     iconSucursalClass,
     iconUserClass,
     users,
@@ -30,9 +32,6 @@ const Main = () => {
     setFullName,
     errors,
     setErrors,
-    setIconMarcaClass,
-    setIconSucursalClass,
-    setIconUserClass
   } = UseUserManagement();
 
   return (
@@ -71,7 +70,7 @@ const Main = () => {
             iconSucursalClass={iconSucursalClass}
             iconUserClass={iconUserClass}
           />
-          <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick} />
+          <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick} selectedUserId={selectedUserId}/>
         </div>
         <div className="iconMotionv2"></div>
       </div>

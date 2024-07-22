@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './UserTable.css';
 
-const UserTable = ({ users, handleUpdateClick, handleDeleteClick }) => {
+const UserTable = ({ users, selectedUserId, handleUpdateClick, handleDeleteClick }) => {
+
+
   return (
     <div className="tableUsers">
       <table>
@@ -14,7 +16,7 @@ const UserTable = ({ users, handleUpdateClick, handleDeleteClick }) => {
           </tr>
         </thead>
         <TransitionGroup component="tbody">
-          {users.map((user, index) => (
+          {users.map((user) => (
             <CSSTransition key={user.id} timeout={500} classNames="fade">
               <tr className="fade-row">
                 <td>{user.marca}</td>
@@ -24,6 +26,12 @@ const UserTable = ({ users, handleUpdateClick, handleDeleteClick }) => {
                     <span className="aspirante-name">{user.aspirante}</span>
                     <div
                       className="btnUpdate"
+                      style={{
+                        backgroundImage: `url(${user.id === selectedUserId
+                          ? '/img/Icon_editar1.svg'
+                          : '/img/Icon_editar.svg'
+                          })`
+                      }}
                       onClick={() => handleUpdateClick(user)}
                     ></div>
                     <div
