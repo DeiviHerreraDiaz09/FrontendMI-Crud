@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { deleteUserService, fetchUsersService, updateUserService, createUserService } from "../services/userService"
+import Swal from 'sweetalert2';
+import { deleteUserService, fetchUsersService, updateUserService, createUserService } from "../services/userService";
 
 const UseUserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -14,8 +15,6 @@ const UseUserManagement = () => {
   const [iconMarcaClass, setIconMarcaClass] = useState('iconMarca');
   const [iconSucursalClass, setIconSucursalClass] = useState('iconSucursal');
   const [iconUserClass, setIconUserClass] = useState('iconUser');
-
-
 
   useEffect(() => {
     const loadUsers = async () => {
@@ -51,13 +50,12 @@ const UseUserManagement = () => {
     setInputsEnabledState(false);
     setSelectedUserId(null);
     setErrors({ marca: '', sucursal: '', fullName: '' });
-    setIconMarcaClass('iconMarca')
-    setIconSucursalClass('iconSucursal')
-    setIconUserClass('iconUser')
+    setIconMarcaClass('iconMarca');
+    setIconSucursalClass('iconSucursal');
+    setIconUserClass('iconUser');
   };
 
   const handleAcceptClick = async () => {
-
     let hasErrors = false;
     let newErrors = { marca: '', sucursal: '', fullName: '' };
 
@@ -87,6 +85,19 @@ const UseUserManagement = () => {
         fullName
       });
 
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario actualizado',
+        text: 'El usuario ha sido actualizado con éxito.',
+        confirmButtonColor: '#C6007E',
+        customClass: {
+          container: 'custom-swal',
+          title: 'custom-swal',
+          content: 'custom-swal',
+          confirmButton: 'custom-swal',
+        }
+      });
+
       const updatedUsers = await fetchUsersService();
       setUsers(updatedUsers);
       setMarca('');
@@ -94,15 +105,20 @@ const UseUserManagement = () => {
       setFullName('');
       setShowButtons(false);
       setInputsEnabledState(false);
+      setSelectedUserId(null)
       setErrors({ marca: '', sucursal: '', fullName: '' });
-      setIconMarcaClass('iconMarca')
-      setIconSucursalClass('iconSucursal')
-      setIconUserClass('iconUser')
+      setIconMarcaClass('iconMarca');
+      setIconSucursalClass('iconSucursal');
+      setIconUserClass('iconUser');
     } catch (error) {
       console.error('Error al aceptar la actualización:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ocurrió un error al actualizar el usuario.',
+      });
     }
   };
-
 
   const handleCreateClick = async (user) => {
     try {
@@ -111,7 +127,20 @@ const UseUserManagement = () => {
         console.log("Error en la creación del usuario");
         return;
       }
-      console.log("Usuario creado con éxito");
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario creado',
+        text: 'El usuario ha sido creado con éxito.',
+        confirmButtonColor: '#C6007E',
+        customClass: {
+          container: 'custom-swal',
+          title: 'custom-swal',
+          content: 'custom-swal',
+          confirmButton: 'custom-swal',
+        }
+      });
+
       const updatedUsers = await fetchUsersService();
       setUsers(updatedUsers);
       setMarca('');
@@ -120,13 +149,18 @@ const UseUserManagement = () => {
       setShowOptions(false);
       setInputsEnabledState(false);
       setErrors({ marca: '', sucursal: '', fullName: '' });
-      setIconMarcaClass('iconMarca')
-      setIconSucursalClass('iconSucursal')
-      setIconUserClass('iconUser')
+      setIconMarcaClass('iconMarca');
+      setIconSucursalClass('iconSucursal');
+      setIconUserClass('iconUser');
     } catch (error) {
       console.error('Error al crear el usuario:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ocurrió un error al crear el usuario.',
+      });
     }
-  }
+  };
 
   const handleUpdateClick = (user) => {
     setMarca(user.marca);
@@ -142,14 +176,56 @@ const UseUserManagement = () => {
   };
 
   const handleDeleteClick = async (id) => {
-    const deleteUser = await deleteUserService(id);
-    if (!deleteUser) {
-      return console.log("Error al eliminar el usuario: " + id);
+    try {
+      const result = await Swal.fire({
+        title: '¿Estás seguro?',
+        text: 'No podrás recuperar este usuario después de eliminarlo.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#C6007E',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar',
+        customClass: {
+          container: 'custom-swal',
+          title: 'custom-swal',
+          content: 'custom-swal',
+          confirmButton: 'custom-swal',
+        }
+      });
+
+      if (result.isConfirmed) {
+        const deleteUser = await deleteUserService(id);
+        if (!deleteUser) {
+          console.log("Error al eliminar el usuario: " + id);
+          return;
+        }
+
+        Swal.fire({
+          title: 'Eliminado!',
+          text: 'El usuario ha sido eliminado.',
+          confirmButtonColor: '#C6007E',
+          customClass: {
+            container: 'custom-swal',
+            title: 'custom-swal',
+            content: 'custom-swal',
+            confirmButton: 'custom-swal',
+          }
+        });
+      }
+
+      const updatedUsers = await fetchUsersService();
+      setUsers(updatedUsers);
+
+    } catch (error) {
+      console.error('Error al eliminar el usuario:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ocurrió un error al eliminar el usuario.',
+      });
     }
-    console.log("Usuario eliminado");
-    const updatedUsers = await fetchUsersService();
-    setUsers(updatedUsers);
-  }
+  };
 
   return {
     iconMarcaClass,

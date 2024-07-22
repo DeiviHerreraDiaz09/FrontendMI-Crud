@@ -5,10 +5,10 @@ import './RedirectLinks.css';
 const RedirectLinks = () => {
   return (
     <div className="redirectLinks">
-      <a href="">MONITORINGINNOVATION</a>
-      <a href="">GPS CONTROL</a>
-      <a href="">Link repo front</a>
-      <a href="">Link repo back</a>
+      <a href="https://monitoringinnovation.com/">MONITORINGINNOVATION</a>
+      <a href="https://gpscontrol.co/">GPS CONTROL</a>
+      <a href="https://github.com/DeiviHerreraDiaz09/FrontendMI-Crud">Link repo front</a>
+      <a href="https://github.com/DeiviHerreraDiaz09/BackendMI-Crud">Link repo back</a>
     </div>
   )
 }

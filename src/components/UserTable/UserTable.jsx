@@ -1,4 +1,3 @@
-import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './UserTable.css';
 
@@ -17,7 +16,7 @@ const UserTable = ({ users, selectedUserId, handleUpdateClick, handleDeleteClick
         <TransitionGroup component="tbody">
           {users.map((user) => (
             <CSSTransition key={user.id} timeout={500} classNames="fade">
-              <tr>
+              <tr className="fade-row">
                 <td>{user.marca}</td>
                 <td>{user.sucursal}</td>
                 <td>
