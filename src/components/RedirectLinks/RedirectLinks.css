@@ -1,0 +1,15 @@
+.redirectLinks {
+    width: 100%;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+}
+
+.redirectLinks>a {
+    color: #00BFFF;
+    font-family: Montserrat-Medium;
+    text-decoration: none;
+    margin-bottom: 15px;
+}

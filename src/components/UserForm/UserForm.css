@@ -1,0 +1,224 @@
+.createUpdateUser {
+    display: flex;
+    justify-content: center;
+}
+
+.show-buttons {
+    padding: 2%;
+    border: none;
+    width: 65%;
+    height: 16rem;
+    margin-top: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+}
+
+.show-options {
+    padding: 2%;
+    border: none;
+    width: 65%;
+    height: 16rem;
+    margin-top: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+    box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+}
+
+.card {
+    padding: 2%;
+    border: none;
+    width: 65%;
+    height: 14rem;
+    margin-top: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+}
+
+.marca {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: 3rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus {
+    background-image: url("/img/Icon_crear.svg");
+    background-repeat: no-repeat;
+    width: 2rem;
+    background-size: 60%;
+    height: 2rem;
+    position: absolute;
+    margin-right: 350px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.iconMarca {
+    width: 10%;
+    height: 3rem;
+    background-image: url("/img/Icon_vehiculo.svg");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.marca>input {
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    height: 55%;
+    width: 75%;
+    border-radius: 15px;
+    padding: 5%;
+    border: 2px solid #C5C5C5;
+    color: #C5C5C5;
+}
+
+.marca>input::placeholder {
+    color: #C5C5C5;
+}
+
+.sucursal {
+    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconSucursal {
+    width: 10%;
+    height: 3rem;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/img/Icon_puntoubicacion.svg");
+}
+
+.sucursal>input {
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    height: 55%;
+    width: 75%;
+    border-radius: 15px;
+    padding: 5%;
+    border: 2px solid #C5C5C5;
+    color: #C5C5C5;
+}
+
+.sucursal>input::placeholder {
+    color: #C5C5C5;
+}
+
+.user {
+    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconUser {
+    width: 10%;
+    height: 3rem;
+    background-image: url("/img/Icon_persona.svg");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.user>input {
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    height: 55%;
+    width: 75%;
+    border-radius: 15px;
+    padding: 5%;
+    border: 2px solid #C5C5C5;
+    color: #C5C5C5;
+}
+
+.user>input::placeholder {
+    color: #C5C5C5;
+}
+
+.action-buttons {
+    padding: 2%;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    margin-top: 10px;
+    margin-right: 15px;
+    gap: 15px;
+    height: 3rem;
+    margin-top: -13px;
+}
+
+.btn-cancel,
+.btn-accept {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+}
+
+.btn-cancel {
+    background-image: url("/img/Icon_cancelar.svg");
+}
+
+.btn-accept {
+    margin-right: 17px;
+    background-image: url("/img/Icon_confirmar.svg");
+}
+
+.action-options {
+    display: flex;
+    /* justify-content: center; */
+    gap: 38px;
+    /* border: 1px solid; */
+    width: 80%;
+    height: 3rem;
+}
+
+.btn-cancelTwo {
+    border: 2px solid #C6007E;
+    background-color: transparent;
+    width: 6rem;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Montserrat-Light;
+    /* margin-right: 20px; */
+}
+
+.btn-create {
+    border: 2px solid #01BEDB;
+    background-color: transparent;
+    width: 6rem;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Montserrat-Light;
+    margin-left: 50px;
+}

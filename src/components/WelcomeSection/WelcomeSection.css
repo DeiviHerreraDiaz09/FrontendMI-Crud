@@ -1,0 +1,70 @@
+.welcomeMI {
+    font-family: Montserrat-Bold;
+    width: 100%;
+    height: 77%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    z-index: 1;
+    margin-bottom: 5.5%;
+    font-size: 6.2rem;
+    color: #00249C;
+    animation: moveLeft 2s ease-in-out forwards;
+}
+
+.mainImg {
+    position: absolute;
+    background-image: url("/img/Telefono-01.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 60%;
+    z-index: 2;
+    animation: moveUp 2s ease-in-out forwards;
+}
+
+.subTitle {
+    position: absolute;
+    z-index: 3;
+    margin-top: 4.3%;
+    color: #00249C;
+    font-size: 4rem;
+    margin-left: 1px;
+    animation: moveDown 2s ease-in-out forwards;
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-800%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(-500%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(150%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
