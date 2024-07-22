@@ -1,6 +1,5 @@
 import React from 'react'
-import './RedirectLinks.css';
-import "../../index.css"
+import './RedirectLinks.css';w
 
 const RedirectLinks = () => {
   return (

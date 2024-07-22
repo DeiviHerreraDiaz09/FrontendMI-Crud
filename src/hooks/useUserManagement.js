@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import "../index.css"
 import { deleteUserService, fetchUsersService, updateUserService, createUserService } from "../services/userService";
 
 const UseUserManagement = () => {
@@ -39,7 +40,6 @@ const UseUserManagement = () => {
     setIconMarcaClass('iconMarcaActive');
     setIconSucursalClass('iconSucursalActive');
     setIconUserClass('iconUserActive');
-
   };
 
   const handleCancelClick = () => {
