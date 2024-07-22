@@ -14,6 +14,9 @@ const Main = () => {
     sucursal,
     fullName,
     showOptions,
+    inputsEnabledState,
+    setInputsEnabledState,
+    handleCreateClick,
     handlePlusClick,
     handleCancelClick,
     handleAcceptClick,
@@ -21,7 +24,9 @@ const Main = () => {
     handleDeleteClick,
     setMarca,
     setSucursal,
-    setFullName
+    setFullName,
+    errors,
+    setErrors
   } = UseUserManagement();
 
   return (
@@ -40,7 +45,7 @@ const Main = () => {
       <div className="formUsers">
         <div className="userFeatures">
           <UserForm
-          handlePlusClick={handlePlusClick}
+            handlePlusClick={handlePlusClick}
             showOptions={showOptions}
             showButtons={showButtons}
             marca={marca}
@@ -51,8 +56,13 @@ const Main = () => {
             setFullName={setFullName}
             handleCancelClick={handleCancelClick}
             handleAcceptClick={handleAcceptClick}
+            handleCreateClick={handleCreateClick}
+            inputsEnabledState={inputsEnabledState}
+            setInputsEnabledState={setInputsEnabledState}
+            errors={errors}
+            setErrors={setErrors}
           />
-          <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick}/>
+          <UserTable users={users} handleUpdateClick={handleUpdateClick} handleDeleteClick={handleDeleteClick} />
         </div>
         <div className="iconMotionv2"></div>
       </div>

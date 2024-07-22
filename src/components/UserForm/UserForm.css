@@ -14,6 +14,8 @@
     flex-direction: column;
     gap: 20px;
     box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+    transition: height 0.5s ease;
+    /* Transición suave para la altura */
 }
 
 .show-options {
@@ -28,6 +30,8 @@
     align-items: end;
     gap: 20px;
     box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+    transition: height 0.5s ease;
+    /* Transición suave para la altura */
 }
 
 .card {
@@ -42,6 +46,8 @@
     flex-wrap: wrap;
     gap: 20px;
     box-shadow: -1px 3px 14px -5px rgba(0, 0, 0, 0.75);
+    transition: height 0.5s ease;
+    /* Transición suave para la altura */
 }
 
 .marca {
@@ -194,31 +200,51 @@
 
 .action-options {
     display: flex;
-    /* justify-content: center; */
-    gap: 38px;
-    /* border: 1px solid; */
+    gap: 35px;
     width: 80%;
     height: 3rem;
+    animation: moveLeft 1s ease-in-out forwards;
 }
 
 .btn-cancelTwo {
     border: 2px solid #C6007E;
     background-color: transparent;
-    width: 6rem;
+    width: 7rem;
     height: 100%;
     border-radius: 5px;
-    font-size: 15px;
-    font-family: Montserrat-Light;
-    /* margin-right: 20px; */
+    font-size: 18px;
+    font-family: Montserrat-Medium;
+    color: #C5C5C5;
 }
 
 .btn-create {
     border: 2px solid #01BEDB;
     background-color: transparent;
-    width: 6rem;
+    width: 7rem;
     height: 100%;
     border-radius: 5px;
-    font-size: 15px;
-    font-family: Montserrat-Light;
-    margin-left: 50px;
+    font-size: 18px;
+    font-family: Montserrat-Medium;
+    margin-left: 20px;
+    color: #C5C5C5;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: -15px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+    text-align: left;
+    width: 75%;
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
